@@ -54,4 +54,4 @@
 
 ## Создание базы данных
 DDL-скрипты для создания всех таблиц и связей доступны по ссылке:  
-[Создание БД](https://github.com/Bebrono/BD_mfti/tree/26533e8e863e10f35105548282daccc98f19cdd9/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%91%D0%94)
+[Создание БД](https://github.com/Bebrono/BD_mfti/tree/d1a352e629680ef685cca561d2b6a17f90036b9b/%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%91%D0%94)
