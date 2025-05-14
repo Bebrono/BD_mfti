@@ -14,7 +14,7 @@
 ---
 
 ## Логическая модель
-![Логическая модель](https://github.com/Bebrono/BD_mfti/blob/a6b2a0d2fd0e3c6601ca0edc1cef5f43c1be0a86/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.png)
+![Логическая модель]([https://github.com/Bebrono/BD_mfti/blob/a6b2a0d2fd0e3c6601ca0edc1cef5f43c1be0a86/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.png](https://github.com/Bebrono/BD_mfti/blob/209ac1fd7060753ec80754036ad04ec5f1f802d6/%D0%9B%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.png))
 
 ## Нормализация данных
 ### 3NF (Третья нормальная форма)
