@@ -87,10 +87,31 @@ BEGIN
 END;
 $$;
 
+--Закрытие завершенных броней
+CREATE OR REPLACE PROCEDURE close_expired_bookings()
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    UPDATE Booking
+    SET valid_to = CURRENT_TIMESTAMP
+    WHERE status = 'подтверждена'
+      AND valid_to = '9999-12-31 23:59:59'::timestamp
+      AND end_date < CURRENT_DATE;
+END;
+$$;
+
+
+
 -- ТЕСТЫ:
+--Закрываем все просроченные брони
+DO $$
+BEGIN
+	CALL close_expired_bookings();
+END;
+$$ LANGUAGE plpgsql;
 
 -- Проверяем доступность номера (должно вернуть true/false)
-SELECT check_availability(5, '2024-12-25') AS is_available;
+SELECT check_availability(11, '2025-06-28') AS is_available;
 
 -- Рассчитываем стоимость 3 ночей в номере 5
 SELECT calculate_cost(5, 3) AS total_cost;
@@ -99,7 +120,7 @@ SELECT calculate_cost(5, 3) AS total_cost;
 DO $$
 BEGIN
     --CALL book_room(2, 13, 1, 3, '2025-12-25', '2025-12-28');
-	CALL book_room(2, 13, 1, 3, '2025-05-15', '2025-05-20');
+	CALL book_room(1, 6, 3, 3, '2025-05-24', '2025-05-26');
 	--CALL book_room(2, 13, 1, 3, '2025-12-25', '2025-12-28');
 	--CALL book_room(2, 13, 1, 3, '2025-12-25', '2025-12-28');
 	--CALL book_room(2, 13, 1, 3, '2025-12-25', '2025-12-28');
@@ -107,6 +128,3 @@ EXCEPTION WHEN OTHERS THEN
     RAISE NOTICE 'Ошибка бронирования: %', SQLERRM;
 END;
 $$ LANGUAGE plpgsql;
-
--- Проверяем, что бронь создалась
-SELECT * FROM Booking ORDER BY booking_id DESC LIMIT 1;

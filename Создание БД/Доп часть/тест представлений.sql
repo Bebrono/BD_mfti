@@ -7,10 +7,10 @@ SELECT * FROM ClientBookingHistory
 WHERE client_id = 1
 ORDER BY start_date;
 
--- Проверка фильтрации по типу номера
+-- Проверка фильтрации по типу номера (пофиксить, фиксится)
 SELECT * FROM ActiveBookings
 WHERE room_type = 'люкс'
-AND end_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '30 days';
+AND end_date BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '60 days';
 
 -- Тест подсчета общей стоимости бронирований клиента
 SELECT 
@@ -24,16 +24,16 @@ GROUP BY client_id, client_name
 ORDER BY total_spent DESC
 LIMIT 5;
 
--- Проверка бронирований, заканчивающихся сегодня
+-- Проверка бронирований, заканчивающихся сегодня (пофиксить, фиксится)
 SELECT * FROM ActiveBookings
 WHERE end_date = CURRENT_DATE;
 
 -- Тест поиска бронирований по периоду
 SELECT * FROM ClientBookingHistory
-WHERE start_date BETWEEN '2024-07-01' AND '2024-07-31'
+WHERE start_date BETWEEN '2024-07-01' AND '2025-07-31'
 ORDER BY start_date;
 
--- Проверка бронирований с определенной услугой
+-- Проверка бронирований с определенной услугой (разобраться)
 SELECT 
     booking_id,
     client_name,

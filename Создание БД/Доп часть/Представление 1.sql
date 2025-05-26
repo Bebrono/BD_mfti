@@ -3,7 +3,7 @@
 
 DROP VIEW IF EXISTS ActiveBookings;
 
-CREATE VIEW ActiveBookings AS
+CREATE OR REPLACE VIEW ActiveBookings AS
 SELECT 
     b.booking_id,
     b.client_id,
@@ -23,6 +23,6 @@ JOIN
 JOIN 
     Tariffs t ON b.tariff_id = t.tariff_id
 WHERE 
-    b.status = 'подтверждена' 
+    b.status = 'подтверждена'
     AND b.end_date >= CURRENT_DATE
-    AND b.valid_to IS NULL;
+    AND b.valid_to = '9999-12-31 23:59:59'::timestamp;
