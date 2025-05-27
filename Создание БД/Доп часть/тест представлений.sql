@@ -24,7 +24,7 @@ GROUP BY client_id, client_name
 ORDER BY total_spent DESC
 LIMIT 5;
 
--- Проверка бронирований, заканчивающихся сегодня (пофиксить, фиксится)
+-- Проверка бронирований, заканчивающихся сегодня 
 SELECT * FROM ActiveBookings
 WHERE end_date = CURRENT_DATE;
 
@@ -33,7 +33,7 @@ SELECT * FROM ClientBookingHistory
 WHERE start_date BETWEEN '2024-07-01' AND '2025-07-31'
 ORDER BY start_date;
 
--- Проверка бронирований с определенной услугой (разобраться)
+-- Проверка бронирований с определенной услугой 
 SELECT 
     booking_id,
     client_name,
@@ -45,3 +45,6 @@ FROM ClientBookingHistory
 WHERE service_name IS NOT NULL
 AND status = 'подтверждена'
 ORDER BY service_name;
+
+--Тест представления 3
+SELECT * FROM Сurrent_bookings;
